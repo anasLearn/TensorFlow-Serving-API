@@ -1,6 +1,8 @@
 services:
   tf-serving:
     build: .
+    env_file:
+      - ./.env
     ports:
       - "8605:8605"
     volumes:
