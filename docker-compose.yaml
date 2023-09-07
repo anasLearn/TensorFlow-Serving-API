@@ -1,0 +1,7 @@
+services:
+  tf-serving:
+    build: .
+    ports:
+      - "8605:8605"
+    volumes:
+      - ../training/saved-models:/saved-models
