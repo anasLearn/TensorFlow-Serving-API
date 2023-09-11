@@ -55,4 +55,3 @@ To make predictions, you can use one of these URLs:
 - By model name: `http://localhost:8605/v1/models/my-model/labels/beta:predict`
 
 These endpoints allow you to efficiently use your TensorFlow models for prediction through the REST API.
-```
