@@ -47,11 +47,38 @@ $ docker compose up
 
 Then you can interact with your TensorFlow Serving API using the following endpoints:
 
-- Access model information: `http://localhost:8605/v1/models/my-model`
+- Access model information: `http://localhost:8605/v1/models/my-model` (GET request)
 
-To make predictions, you can use one of these URLs:
+To make predictions, you can use one of the following URLs:
 
-- By model version number: `http://localhost:8605/v1/models/my-model/versions/2:predict`
-- By model name: `http://localhost:8605/v1/models/my-model/labels/beta:predict`
+- Predict by model version number: `http://localhost:8605/v1/models/my-model/versions/2:predict` (POST request)
+- Predict by model name: `http://localhost:8605/v1/models/my-model/labels/beta:predict` (POST request)
 
-These endpoints allow you to efficiently use your TensorFlow models for prediction through the REST API.
+These endpoints enable efficient utilization of your TensorFlow models for prediction through the REST API.
+
+## Payload of the POST Request
+
+When you want the model to make a prediction, you need to send a POST request to one of the above endpoints. The payload should adhere to the following format:
+
+
+```json
+{
+   "instances": [
+      **instance_1**,
+      **instance_2**,
+      ...
+   ]
+}
+```
+
+### Response
+The response to the POST request will be structured as follows:
+
+```json
+{
+   "predictions": [
+      **prediction_1**,
+      **prediction_1**,
+      ...
+   ]
+}
