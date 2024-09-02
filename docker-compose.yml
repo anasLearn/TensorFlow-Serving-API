@@ -7,7 +7,12 @@ services:
       - ${REST_API_PORT}:${REST_API_PORT}
     volumes:
       - ${MODELS_LOCATION}:/saved-models
-    command: ["tensorflow_model_server", "--rest_api_port=${REST_API_PORT}", "--allow_version_labels_for_unavailable_models", "--model_config_file=/saved-models/tf-serving-configs/${CONFIGURATION_FILE}"]
+    container_name: tf-serving-container
+    command:
+      - "tensorflow_model_server"
+      - "--rest_api_port=${REST_API_PORT}"
+      - "--allow_version_labels_for_unavailable_models"
+      - "--model_config_file=/saved-models/tf-serving-configs/${CONFIGURATION_FILE}"
 
 
 # --allow_version_labels_for_unavailable_models

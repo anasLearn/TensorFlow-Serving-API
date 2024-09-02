@@ -8,6 +8,14 @@ TensorFlow Serving enables you to deploy and serve TensorFlow models via a REST 
 
 For a comprehensive understanding of TensorFlow Serving, you can watch this informative [YouTube video](https://www.youtube.com/watch?v=P-5sMcpTE0g&t=604s) and refer to this [GitHub repository](https://github.com/codebasics/deep-learning-keras-tf-tutorial/tree/master/48_tf_serving).
 
+## Benefits
+
+Using TensorFlow Serving offers several advantages over a basic FastAPI implementation:
+
+- **Batch Processing**: TensorFlow Serving can process multiple images in a single batch, improving efficiency.
+- **Multi-Model Support**: Easily switch between multiple models by adjusting a configuration file.
+- **Containerized Deployment**: TensorFlow Serving can be deployed quickly using a Docker container.
+
 ## Setup
 
 To use this TensorFlow Serving Docker image, follow these steps:
